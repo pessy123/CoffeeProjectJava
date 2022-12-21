@@ -1,0 +1,71 @@
+Work on project. Stage 3/6: Estimate the number of servings
+Project: Coffee Machine
+Estimate the number of servings
+ Hard
+ 
+Boolean and logical operations
+Relational operators
+Conditional statement
+
+Description
+A real coffee machine doesn't have an infinite supply of water, milk, or coffee beans. And if you input a really big number, it's almost certain that a real coffee machine wouldn't have the supplies needed to make all that coffee for you.
+
+In this stage, you need to improve the previous program. Now you will check amounts of water, milk, and coffee beans available in your coffee machine at the moment.
+
+Objectives
+Write a program that does the following:
+
+It requests the amounts of water, milk, and coffee beans available at the moment, and then asks for the number of cups a user needs.
+If the coffee machine has enough supplies to make the specified amount of coffee, the program should print "Yes, I can make that amount of coffee".
+If the coffee machine can make more than that, the program should output "Yes, I can make that amount of coffee (and even N more than that)", where N is the number of additional cups of coffee that the coffee machine can make.
+If the amount of given resources is not enough to make the specified amount of coffee, the program should output "No, I can make only N cup(s) of coffee".
+
+
+
+
+package machine;
+import java.util.Scanner;
+
+public class CoffeeMachine {
+    public static void main(String[] args) {
+        
+        System.out.println("Starting to make a coffee\n"+ "Grinding coffee beans\n"+
+                           "Boiling water\n"+"Mixing boiled water with crushed coffee beans\n"+
+                           "Pouring coffee into the cup\n"+"Pouring some milk into the cup\n"+"Coffee is ready!");
+
+        Scanner scanner = new Scanner(System.in);
+        int noOfCoffee = scanner.nextInt();
+        int water = 200 * noOfCoffee;
+        int milk = 50 * noOfCoffee;
+        int beans = 15 * noOfCoffee;
+        System.out.print("Write how many cups of coffee you will need:\n"+"For "+ noOfCoffee + " cups of coffee you will need:\n"+water+" ml of water\n"+
+        milk+" ml of milk\n"+beans+" g of coffee beans");
+
+        System.out.print("Write how many ml of water the coffee machine has: ");
+        int waterCM = scanner.nextInt();
+        System.out.print("Write how many ml of milk the coffee machine has: ");
+        int milkCM = scanner.nextInt();
+        System.out.print("Write how many grams of coffee beans the coffee machine has: ");
+        int beansCM = scanner.nextInt();
+        System.out.print("Write how many cups of coffee you will need: ");
+        int cupsCM = scanner.nextInt();
+
+        int waterCups = waterCM/200;
+        int milkCups = milkCM/50;
+        int beanCups = beansCM/15;
+
+        int limitCups = Math.min(waterCups, Math.min(milkCups, beanCups));
+
+        if (cupsCM > limitCups) {
+            System.out.println("No, I can make only " + limitCups + " cup(s) of coffee");
+        } else if (cupsCM == limitCups) {
+            System.out.println("Yes, I can make that amount of coffee");
+        } else {
+            int extra = limitCups - cupsCM;
+            System.out.println("Yes, I can make that amount of coffee (and even " + extra + " more than that)");
+        }
+        
+
+        
+       }
+}
