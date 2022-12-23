@@ -1,8 +1,6 @@
-Buy, fill, take!
+/*Buy, fill, take!
  Medium
- 26 minutes
-10628 users solved this stage. Latest completion was about 6 hours ago.
-9 / 9 Prerequisites
+ 
 Ternary operator
 The while and do-while loops
 The for-loop
@@ -27,7 +25,7 @@ If the user writes "take" the program should give all the money that it earned f
 At the moment, the coffee machine has $550, 400 ml of water, 540 ml of milk, 120 g of coffee beans, and 9 disposable cups.
 
 To sum up, your program should print the coffee machine's state, process one query from the user, as well as print the coffee machine's state after that. Try to use functions for implementing every action that the coffee machine can do.
-
+*/
 
 import java.util.Scanner;
 
